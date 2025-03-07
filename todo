@@ -16,10 +16,10 @@
   [x] Set up password hashing and validation
 
 - **Hour 6-8**: Implement project management functionality
-  - Implement project schema
-  - Create CRUD endpoints for projects
-  - Implement user-project association
-  - Add validation for project operations
+  [x] Implement project schema
+  [] Create CRUD endpoints for projects
+  [] Implement user-project association
+  [] Add validation for project operations
 
 ## Phase 2: Core Task Management Backend (9-16 hours)
 

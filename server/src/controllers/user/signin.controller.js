@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { signinSchema } from "../../schemas/signin.schema.js";
+import { signinSchema } from "../../schemas/user/signin.schema.js";
 import { User } from "../../models/user.model.js";
 import { JWT_SECRET } from "../../config/secrets.js";
 

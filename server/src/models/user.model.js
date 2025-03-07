@@ -18,11 +18,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    role: {
-      type: String,
-      enum: ["admin", "manager", "member"],
-      default: "Member",
-    },
     projects: [
       {
         type: Schema.Types.ObjectId,
