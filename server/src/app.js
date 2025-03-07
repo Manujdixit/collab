@@ -14,9 +14,11 @@ app.use(formatResponse);
 //routes import
 import healthRouter from "./routes/health.route.js";
 import userRouter from "./routes/user.routes.js";
+import projectRouter from "./routes/project.route.js";
 
 //routes declaration
 app.use("/api/v1/", healthRouter);
 app.use("/api/v1/", userRouter);
+app.use("/api/v1/project", projectRouter);
 
 export { app };

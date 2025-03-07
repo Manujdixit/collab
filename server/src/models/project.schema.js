@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const projectSchema = new Schema(
   {
-    title: {
+    name: {
       type: String,
       required: true,
       trim: true,

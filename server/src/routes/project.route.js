@@ -1,12 +1,9 @@
 import { Router } from "express";
-
+import { createProject } from "../controllers/project/createProject.controller.js";
 import { authMiddleware } from "../middlewares/auth.middleware.js";
 
-const userRouter = Router();
+const projectRouter = Router();
 
-userRouter.route().post();
-userRouter.route().post();
+projectRouter.route("/").post(authMiddleware, createProject);
 
-userRouter.route("/protected").get(authMiddleware, protect);
-
-export default userRouter;
+export default projectRouter;

@@ -16,6 +16,7 @@ export const authMiddleware = async (req, res, next) => {
     if (!user) {
       return res.formatResponse(401, "Unauthorized: User not found");
     }
+    req.user = user;
     next();
   } catch (error) {
     console.error("Error verifying token:", error.message);
