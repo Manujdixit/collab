@@ -1,12 +1,9 @@
 import mongoose from "mongoose";
-
-console.log(process.env.MONGODB_URI);
+import { MONGODB_URI } from "../config/secrets.js";
 
 const connectDB = async () => {
   try {
-    const connectionInstance = await mongoose.connect(
-      `${process.env.MONGODB_URI}`
-    );
+    const connectionInstance = await mongoose.connect(`${MONGODB_URI}`);
     console.log(
       `\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`
     );

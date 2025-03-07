@@ -11,10 +11,9 @@
 - **Hour 3-5**: Implement user & auth functionality
 
   [x] Implement user schema
-
-  - Create user registration and login endpoints
-  - Implement JWT authentication middleware
-  - Set up password hashing and validation
+  [x] Create user registration and login endpoints
+  [x] Implement JWT authentication middleware
+  [x] Set up password hashing and validation
 
 - **Hour 6-8**: Implement project management functionality
   - Implement project schema

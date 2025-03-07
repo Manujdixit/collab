@@ -1,4 +1,4 @@
-export const health = (req, res) => {
+export const protect = (req, res) => {
   try {
     return res.formatResponse(200, "Server is healthy");
   } catch (error) {

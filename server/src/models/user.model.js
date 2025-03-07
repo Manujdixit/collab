@@ -13,10 +13,6 @@ const userSchema = new Schema(
       unique: true,
       trim: true,
       lowercase: true,
-      match: [
-        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-        "Please provide a valid email address",
-      ],
     },
     password: {
       type: String,
@@ -24,7 +20,7 @@ const userSchema = new Schema(
     },
     role: {
       type: String,
-      enum: ["Admin", "Manager", "Member"],
+      enum: ["admin", "manager", "member"],
       default: "Member",
     },
     projects: [
@@ -39,14 +35,6 @@ const userSchema = new Schema(
         ref: "Task",
       },
     ],
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-    updatedAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
   { timestamps: true }
 );

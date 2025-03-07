@@ -1,6 +1,8 @@
 import jwt from "jsonwebtoken";
+import { User } from "../models/user.model.js";
+import { JWT_SECRET } from "../config/secrets.js";
 
-export const authMiddleware = (req, res, next) => {
+export const authMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(403).json({ message: "Unauthorized" });
@@ -9,7 +11,11 @@ export const authMiddleware = (req, res, next) => {
   const token = authHeader.split(" ")[1];
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.userId = decoded.userId;
+
+    const user = await User.findById(decoded.userId).select("-password");
+    if (!user) {
+      return res.formatResponse(401, "Unauthorized: User not found");
+    }
     next();
   } catch (error) {
     console.error("Error verifying token:", error.message);
